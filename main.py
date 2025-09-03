@@ -8,7 +8,6 @@ class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
 
-        # Загрузка интерфейса из файла
         uic.loadUi('tg.ui', self)
         self.service = Service("db.sqlite3")
         self.bot_thread = BotThread()

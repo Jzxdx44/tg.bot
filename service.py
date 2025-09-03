@@ -76,14 +76,14 @@ class Service:
 
     def add_product(self, name, price):
         name = self._validate_name(name)
-        price = self._validate_price(price)  # проверка корректности данных
+        price = self._validate_price(price) 
 
         if (name is not None) and (price is not None):
             self.cursor.execute(
                 f"insert into products(name, price) values ('{name}', {price})")
             self.conn.commit()
 
-    def new_order(self, username):  # новый заказ в базу от клиента username
+    def new_order(self, username):  
         username = self._validate_name(username)
 
         if (username is not None):
@@ -91,7 +91,6 @@ class Service:
                 f"insert into order(username) values ('{username}')")
             self.conn.commit()
 
-    # добавить новый товар к определнному заказу (в корзину)
     def add_to_order(self, order_id, product_id, quantity=1):
         order_id = self._validate_name(order_id)
         product_id = self._validate_name(product_id)
@@ -101,7 +100,7 @@ class Service:
                 f"insert into order(order_id, product_id, quanyity) values ('{order_id}', '{product_id}', {quantity})")
             self.conn.commit()
 
-    # получить список заказов клиента с конкретным username
+    
     def get_client_orders(self, username):
         self.cursor.execute("select * from orders_line")
         orders_line = self.cursor.fetchall()
