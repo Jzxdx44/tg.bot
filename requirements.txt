@@ -1,0 +1,10 @@
+certifi            
+charset-normalizer 
+idna               
+pip                
+PyQt5             
+PyQt5-Qt5         
+PyQt5_sip          
+pyTelegramBotAPI   
+requests          
+urllib3
