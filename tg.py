@@ -70,9 +70,6 @@ class BotThread(QThread):
                 bot.register_next_step_handler(
                     message, on_mail, username, validate_phone)
                 return
-            # if email is not None:
-            #     self.signal.emit(['pull_email', message, email])
-            # bot.register_next_step_handler(message,on_mail )
 
             self.signal.emit(
                 ['pull_username', message, username, validate_phone, email])
@@ -108,7 +105,6 @@ class BotThread(QThread):
 
         @bot.callback_query_handler(func=lambda call: True)
         def handle_callback(call):
-            # if self.current_username in blacklist:
 
             if call.data == "catalog":
                 self.signal.emit(['catalog', call.message])
