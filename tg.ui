@@ -23,6 +23,11 @@
       <height>581</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">border:1px solid gray; 
+border-radius:9px;
+background-color: rgb(225, 255, 215);</string>
+    </property>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -53,6 +58,11 @@
       <height>581</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">border:1px solid gray; 
+border-radius:9px;
+background-color: rgb(225, 255, 215);</string>
+    </property>
    </widget>
    <widget class="QListWidget" name="listWidget_goods">
     <property name="geometry">
@@ -63,12 +73,17 @@
       <height>581</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">border:1px solid gray; 
+border-radius:9px;
+background-color: rgb(225, 255, 215);</string>
+    </property>
    </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>580</x>
-      <y>20</y>
+      <x>590</x>
+      <y>30</y>
       <width>251</width>
       <height>41</height>
      </rect>
@@ -88,7 +103,7 @@
     <property name="geometry">
      <rect>
       <x>870</x>
-      <y>20</y>
+      <y>30</y>
       <width>251</width>
       <height>41</height>
      </rect>
