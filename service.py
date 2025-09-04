@@ -108,6 +108,7 @@ class Service:
 
     
     def get_client_orders(self, username):
+        """получение заказов от клиентов"""
         self.cursor.execute("select * from orders_line")
         orders_line = self.cursor.fetchall()
 
