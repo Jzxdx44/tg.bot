@@ -50,16 +50,19 @@ class Service:
         self.conn.commit()
 
     def _validate_name(self, name):
+        """проверка имени пользователя"""
         if name:
             return name
         return None
 
     def _validate_price(self, price):
+        """проверка цены"""
         if price > 0:
             return price
         return None
 
     def add_client(self, username, phone=None, email=None):
+        """добавить клиента"""
         username = self._validate_name(username)
         if phone is None:
             phone = ""
@@ -75,6 +78,7 @@ class Service:
         return True
 
     def add_product(self, name, price):
+        """добавить новый товар"""
         name = self._validate_name(name)
         price = self._validate_price(price) 
 
@@ -84,6 +88,7 @@ class Service:
             self.conn.commit()
 
     def new_order(self, username):  
+        """создать новый заказ"""
         username = self._validate_name(username)
 
         if (username is not None):
@@ -92,6 +97,7 @@ class Service:
             self.conn.commit()
 
     def add_to_order(self, order_id, product_id, quantity=1):
+        """добавление товаров в заказ"""
         order_id = self._validate_name(order_id)
         product_id = self._validate_name(product_id)
 
@@ -132,6 +138,7 @@ class Service:
         return orders
 
     def add_order(self, username, cart):
+        """добавление заказа"""
         order_line = {}
         for good_id in cart:
             if good_id in order_line:
@@ -153,6 +160,7 @@ class Service:
             self.conn.commit()
 
     def get_cart(self, cart):
+        """выдать корзину"""
         self.cursor.execute(
             f"select * from products where id in ({','.join(list(map(str, cart)))})")
         products_cart = self.cursor.fetchall()
